@@ -1,0 +1,162 @@
+@import "../../styles/mixin";
+
+.hero {
+  position: relative;
+}
+.heroContent {
+  display: flex;
+  color: #fff;
+  width: 85%;
+  max-width: 1500px;
+  margin: auto;
+  padding-top: 5em;
+}
+.heroLeft,
+.heroRight {
+  width: 50%;
+}
+
+.heroLeftContent {
+  //background: #0e0e0e;
+  //margin: 8em 0;
+  padding: 2em 0;
+  h2 {
+    font-family: AeonikBold;
+    font-weight: bold;
+    //font-family: 4em;
+    font-size: 5.4vw;
+    line-height: 90px;
+    overflow: hidden;
+    width: 90%;
+    min-width: 500px;
+    //background: pink;
+    span {
+      display: inline-block;
+    }
+    .heroImp {
+      color: #007bff;
+    }
+  }
+  p {
+    margin: -1.4em 0 2em 0;
+    width: 75%;
+    color: rgba(255, 255, 255, 0.83);
+    line-height: 26px;
+    font-size: 1.03em;
+  }
+  button {
+    @include btnRegular(200px);
+    // max-width: 200px;
+    // min-width: 180px;
+    // width: 13vw;
+    font-weight: 600;
+    font-size: 15px;
+  }
+}
+.heroRight {
+  //background: #0e0e0e;
+  position: relative;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.circle1 {
+  position: absolute;
+  right: -1em;
+}
+.heroImg {
+  //   margin-left: 50%;
+  margin-right: 1em;
+  position: relative;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    max-width: 380px;
+    height: 100%;
+  }
+}
+.circle2 {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 4em;
+  position: absolute;
+}
+.polygon1 {
+  position: absolute;
+  left: -2.5em;
+  //top: 10em;
+  bottom: 14em;
+  z-index: -1;
+}
+
+@media (min-width: 1815px) {
+  .heroContent {
+    h2 {
+      font-size: 5vw;
+      margin-bottom: 40px;
+      line-height: 105px;
+    }
+  }
+}
+
+@media (max-width: 910px) {
+  .heroContent {
+    width: 95%;
+  }
+  .heroLeftContent {
+    padding: 4em 0;
+    h2 {
+      line-height: 65px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    // background: #353434;
+    width: 100vw;
+  }
+  .heroContent {
+    flex-direction: column;
+  }
+  .heroLeft,
+  .heroRight {
+    width: 95%;
+    margin: auto;
+  }
+  .heroLeft {
+    text-align: center;
+    //background: pink;
+    h2,
+    p {
+      width: 100%;
+    }
+    h2 {
+      font-size: 4em;
+    }
+  }
+  .heroRight {
+    margin-top: 2em;
+    align-items: center;
+  }
+  .circle1 {
+    display: none;
+  }
+}
+
+@media (max-width: 545px) {
+  .heroLeft {
+    h2 {
+      font-size: 3em;
+      //background: #353434;
+      min-width: 1px;
+    }
+  }
+  .heroRight {
+    margin-top: 0;
+  }
+}

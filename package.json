@@ -1,0 +1,25 @@
+{
+  "name": "stack-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.1",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "atropos": "^1.0.2",
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.1",
+    "framer-motion": "^10.12.16",
+    "gsap": "^3.11.5",
+    "next": "13.1.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.62.1"
+  }
+}
