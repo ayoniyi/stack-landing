@@ -54,7 +54,7 @@
   align-items: center;
   justify-content: center;
 
-  animation: vanish 0.5s ease forwards 4.6s;
+  //animation: vanish 0.5s ease forwards 4.6s;
 }
 
 // .logoSh {
@@ -84,14 +84,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  left: -2.4em;
+  left: -3.4em;
 
   svg:nth-child(1) {
-    animation: fill1 0.5s ease forwards 1.6s;
+    animation: fill1 0.5s ease forwards 1.4s;
     path {
       stroke-dasharray: 219.5;
       stroke-dashoffset: 219.5;
-      animation: line-anim 1.5s ease forwards;
+      animation: line-anim 1s ease forwards;
     }
   }
   svg:nth-child(2) {
@@ -99,12 +99,12 @@
     left: 1em;
     bottom: 5px;
     animation: shape-anim 2s ease forwards 3s;
-    animation: fill2 0.5s ease forwards 2s;
+    animation: fill2 0.5s ease forwards 1.7s;
 
     path {
       stroke-dasharray: 219.5;
       stroke-dashoffset: 219.5;
-      animation: line-anim 1.5s ease forwards 0.5s;
+      animation: line-anim 1s ease forwards 0.5s;
     }
   }
   svg:nth-child(3) {
@@ -112,16 +112,17 @@
     left: 2em;
     bottom: 10px;
     animation: shape-anim 2s ease forwards 3s;
-    animation: fill3 0.5s ease forwards 2.5s;
+    animation: fill3 0.5s ease forwards 2s;
 
     path {
       stroke-dasharray: 219.5;
       stroke-dashoffset: 219.5;
-      animation: line-anim 1.5s ease forwards 1s;
+      animation: line-anim 1s ease forwards 1s;
     }
   }
 }
 .logoTx {
+  margin-left: -0.5em;
   //margin-left: 2.5em; ---
   //animation: text-anim 2s ease forwards 3.75s;
   svg {
@@ -148,7 +149,7 @@
 @keyframes rightSlide {
   to {
     //transform: translateX(100%);
-    right: -50%;
+    right: -65%;
   }
 }
 @keyframes vanish {
@@ -202,5 +203,29 @@
   }
   to {
     fill: black;
+  }
+}
+
+@media (max-width: 450px) {
+  .introLeft {
+    justify-content: center;
+  }
+  .introRight {
+    justify-content: flex-start;
+    //background: lavender;
+  }
+  .logoSh {
+    left: -1.5em;
+    svg {
+      width: 63px;
+      height: 67px;
+    }
+  }
+  .logoTx {
+    margin-left: -3em;
+    svg {
+      width: 209px;
+      height: 68px;
+    }
   }
 }

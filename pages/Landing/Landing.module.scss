@@ -1,7 +1,9 @@
 @import "../../styles/mixin";
 
+// ----- Hero ---- //
 .hero {
   position: relative;
+  cursor: none;
 }
 .heroContent {
   display: flex;
@@ -169,5 +171,405 @@
   }
   .heroRight {
     margin-top: 0;
+  }
+}
+
+// ----- Built Section ---- //
+.builtSection {
+  margin-top: 3em;
+  padding: 3em 0;
+  background: linear-gradient(
+    230.15deg,
+    #232222 35.84%,
+    rgba(35, 34, 34, 0.27) 69.06%
+  );
+}
+.builtContent {
+  text-align: center;
+  max-width: 1300px;
+  margin: auto;
+  h3 {
+    color: rgba(255, 255, 255, 0.88);
+    font-family: AeonikBold;
+    font-size: 2.3em;
+    width: 60%;
+    margin: auto;
+
+    span {
+      color: #007bff;
+    }
+  }
+  p {
+    width: 65%;
+    margin: 1.5em auto;
+    color: #ffffffdd;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+}
+.builtLogos {
+  width: 55%;
+  margin: 3em auto 1em auto;
+  @include flexRegular(row, space-between);
+}
+@media (max-width: 1080px) {
+  .builtContent {
+    h3 {
+      width: 60%;
+    }
+  }
+  .builtLogos {
+    width: 70%;
+  }
+}
+@media (max-width: 800px) {
+  .builtContent {
+    h3,
+    p {
+      width: 80%;
+    }
+  }
+  .builtLogos {
+    width: 95%;
+  }
+}
+@media (max-width: 520px) {
+  .builtContent {
+    h3,
+    p {
+      width: 95%;
+    }
+    h3 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 17px;
+    }
+  }
+  .builtLogos {
+    @include flexRegular(column, space-between);
+    img {
+      margin-bottom: 3em;
+    }
+  }
+}
+
+// ----- Help Section ---- //
+.helpSection {
+  position: relative;
+  margin: 6em 0 3em 0;
+}
+.circle3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.helpContent {
+  width: 80%;
+  max-width: 1300px;
+  @include flexRegular(row, space-between);
+  margin: auto;
+  padding-bottom: 5em;
+}
+.helpText {
+  width: 45%;
+  h4 {
+    color: rgba(255, 255, 255, 0.94);
+    font-family: AeonikBold;
+    font-size: 18px;
+    width: 90%;
+    span {
+      color: #007bff;
+    }
+  }
+  h3 {
+    font-family: AeonikBold;
+    font-size: 31px;
+    color: #fff;
+    margin: 0.8em 0;
+    width: 80%;
+  }
+  p {
+    font-size: 17.5px;
+    width: 70%;
+    color: #ffffffd3;
+  }
+}
+.boxes {
+  width: 53%;
+}
+.boxRows {
+  @include flexRegular(row, flex-start);
+  margin-bottom: 3em;
+  .box:nth-child(1) {
+    padding: 1em 1.5em;
+    background: linear-gradient(
+      135.76deg,
+      #232222 32.87%,
+      rgba(35, 34, 34, 0.27) 75.33%
+    );
+    backdrop-filter: blur(2px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 12px 0px;
+  }
+  .box:nth-child(2) {
+    margin-left: 2em;
+    padding: 1em 1.5em;
+    background: linear-gradient(
+      75.76deg,
+      #232222 32.87%,
+      rgba(35, 34, 34, 0.27) 75.33%
+    );
+    backdrop-filter: blur(2px);
+    // transform: rotate(179.89deg);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 12px 0px;
+  }
+  .box {
+    color: #fff;
+    h3 {
+      margin: 1em 0;
+      font-family: AeonikBold;
+      font-size: 16px;
+    }
+    p {
+      width: 85%;
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .boxes {
+    width: 55%;
+  }
+  .boxRows {
+    align-items: stretch;
+  }
+}
+@media (max-width: 910px) {
+  .helpContent {
+    width: 95%;
+  }
+}
+@media (max-width: 750px) {
+  .helpContent {
+    @include flexRegular(column, space-between);
+  }
+  .helpText,
+  .boxes {
+    width: 95%;
+  }
+  .boxes {
+    margin-top: 3em;
+  }
+  .helpText {
+    h3,
+    p {
+      width: 90%;
+    }
+  }
+  .boxRows {
+    .box {
+      p {
+        width: 95%;
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .boxRows {
+    @include flexRegular(column, flex-start);
+    margin-bottom: 0.5em;
+    .box {
+      margin-bottom: 2em;
+
+      h3,
+      p {
+        width: 85%;
+      }
+      p {
+        font-size: 1.1em;
+      }
+    }
+    .box:nth-child(1) {
+      margin-left: 0;
+      padding: 2em 1.5em;
+    }
+    .box:nth-child(2) {
+      margin-left: 0;
+      padding: 2em 1.5em;
+    }
+  }
+}
+
+// ----- Products Section ---- //
+
+.products {
+  //margin: 4em 0;
+  color: #fff;
+  padding-bottom: 5em;
+}
+.productsContent {
+  width: 80%;
+  max-width: 1300px;
+  margin: auto;
+}
+.productTxt {
+  text-align: center;
+  h3 {
+    color: #ffffffea;
+
+    font-family: AeonikBold;
+    span {
+      color: #007bff;
+    }
+  }
+  h2 {
+    margin: 1em 0;
+    font-family: AeonikBold;
+    font-size: 2em;
+  }
+}
+.productBoxes {
+  margin: 1.5em 0;
+  width: 86%;
+  margin: auto;
+}
+.productBoxBig {
+  margin-top: 3em;
+  background: linear-gradient(
+    -35.76deg,
+    #1f1f1f 32.87%,
+    rgba(35, 34, 34, 0.27) 75.33%
+  );
+  backdrop-filter: blur(2px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 12px 0px;
+  padding: 2.4em 3em;
+  @include flexRegular(row, space-between);
+  align-items: center;
+}
+.pBBTxt {
+  h3 {
+    font-family: AeonikBold;
+    font-size: 1.9em;
+    margin-top: 10px;
+  }
+  p {
+    margin: -10px 0 0.5em 0;
+    width: 90%;
+    font-weight: lighter;
+    color: #ffffffd7;
+  }
+  button {
+    @include btnRegular(170px);
+    height: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 1em;
+  }
+}
+.pBBImg {
+  img {
+    transform: scale(1.06);
+    width: 100%;
+    height: 100%;
+    margin-left: -10px;
+  }
+}
+.productBoxRow {
+  @include flexRegular(row, space-between);
+  align-items: stretch;
+  margin: 2em 0;
+}
+.productBoxSmall {
+  position: relative;
+  background: linear-gradient(
+    135.76deg,
+    #232222 32.87%,
+    rgba(35, 34, 34, 0.27) 75.33%
+  );
+  backdrop-filter: blur(2px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 12px 0px;
+  padding: 2em 2em 0 2em;
+  @include flexRegular(column, space-between);
+  // align-items: baseline;
+  width: 47%;
+  height: 470px;
+}
+.pBSTxt {
+  h3 {
+    font-family: AeonikBold;
+    font-size: 1.9em;
+  }
+  p {
+    margin: 0.5em 0;
+    width: 90%;
+    font-weight: lighter;
+    color: #ffffffd7;
+  }
+  button {
+    @include btnRegular(170px);
+    height: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 1.4em;
+  }
+}
+.pBSImg {
+  //background: pink;
+  // width: 90%;
+  // height: 90%;
+  position: absolute;
+  bottom: -2px;
+}
+@media (max-width: 910px) {
+  .productsContent {
+    width: 95%;
+  }
+  .productBoxes {
+    width: 100%;
+  }
+}
+@media (max-width: 580px) {
+  .productBoxBig {
+    @include flexRegular(column, center);
+    align-items: center;
+    text-align: center;
+  }
+  .pBBTxt {
+    h3 {
+      font-size: 2.2em;
+    }
+    p {
+      width: 100%;
+    }
+  }
+  .pBBImg {
+    margin-top: 3em;
+  }
+  .productBoxRow {
+    //margin: 1em 0;
+    @include flexRegular(column, space-between);
+  }
+  .productBoxSmall {
+    width: 100%;
+    margin: 2em 0;
+    height: 520px;
+  }
+  .pBSTxt {
+    text-align: center;
+    h3 {
+      font-size: 2.2em;
+    }
+    p {
+      width: 100%;
+    }
+    button {
+      margin-bottom: 1em;
+    }
   }
 }
