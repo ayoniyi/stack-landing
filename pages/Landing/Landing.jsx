@@ -17,6 +17,10 @@ import {
   bank,
   crypto,
   cards,
+  polygon2,
+  lines,
+  comply,
+  circle4,
 } from "./assets";
 import Header from "../../components/header/Header";
 import Cursor from "../../components/cursorFire/Cursor";
@@ -189,6 +193,110 @@ const Landing = () => {
               </div>
               <div className={style.pBBImg}>
                 <Image src={cards} alt="virtual cards" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={style.compliance}>
+        <div className={style.polygon2}>
+          <Image src={polygon2} alt="polygon" />
+        </div>
+        <div className={style.complianceContent}>
+          <div className={style.complianceTxt}>
+            <h3>
+              Built In <span>Compliance</span>{" "}
+            </h3>
+            <h2>Remain compliant as you continue to scale.</h2>
+            <p>
+              The true test is not really how well you can build or scale your
+              product. The true test is how well you can remain compliant while
+              building and scaling your product.
+            </p>
+            <p>
+              Build with peace of mind knowing that we are a global identity
+              verification and fraud prevention service provider. Don't believe
+              us ? ask us for proof
+            </p>
+            <p>
+              Onboard customers in any country, faster, cheaper, with more
+              available options, minus the discrimination.
+            </p>
+          </div>
+          <div className={style.complianceImg}>
+            <Image src={lines} alt="shape" />
+            <div className={style.complyImg}>
+              <Image src={comply} alt="compliance" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={style.offering}>
+        <div className={style.circle4}>
+          <Image src={circle4} alt="circle" />
+        </div>
+        <div className={style.offeringContent}>
+          <div className={style.offeringTitle}>
+            <h2>
+              Product <span>Offering</span>
+            </h2>
+            <p>
+              Although it is impossible to list every single product that we
+              offer in this section, here are some products that may interest
+              you.
+            </p>
+          </div>
+          <div className={style.offerings}>
+            <div className={style.offeringRow}>
+              <div className={style.offeringBox}>
+                <Image src={look1} alt="credit score" />
+                <h3>Credit Scores</h3>
+                <p>
+                  Display your customers credit scores and accounts within your
+                  app.
+                </p>
+              </div>
+              <div className={style.offeringBox}>
+                <Image src={look1} alt="crypto virtual accounts" />
+                <h3>Crypto Virtual Accounts</h3>
+                <p>
+                  Display your customers credit scores and accounts within your
+                  app.
+                </p>
+              </div>
+              <div className={style.offeringBox}>
+                <Image src={look1} alt="irtual accounts" />
+                <h3>Virtual Bank Accounts</h3>
+                <p>
+                  Display your customers credit scores and accounts within your
+                  app.
+                </p>
+              </div>
+            </div>
+            <div className={style.offeringRow}>
+              <div className={style.offeringBox}>
+                <Image src={look1} alt="credit score" />
+                <h3>Transaction Enrichment</h3>
+                <p>
+                  Make sense of messy bank transaction data with a single API
+                  call.
+                </p>
+              </div>
+              <div className={style.offeringBox}>
+                <Image src={look1} alt="crypto virtual accounts" />
+                <h3>Transaction scoring</h3>
+                <p>
+                  Score and detect high risk transactions in real-time with the
+                  help of machine learning.
+                </p>
+              </div>
+              <div className={style.offeringBox}>
+                <Image src={look1} alt="irtual accounts" />
+                <h3>Identity Verificaiton</h3>
+                <p>
+                  Verify the identity of businesses and individuals faster than
+                  you can read this sentence.
+                </p>
               </div>
             </div>
           </div>

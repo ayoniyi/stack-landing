@@ -1,8 +1,10 @@
 import circle1 from "./ellipse1.svg";
 import circle2 from "./ellipse2.svg";
 import circle3 from "./ellipse3.svg";
+import circle4 from "./circle4.svg";
 import iphone from "./iphone11.png";
 import polygon1 from "./polygon1.svg";
+import polygon2 from "./polygon3.svg";
 import logo1 from "./contrologo.svg";
 import logo2 from "./maplelogo.svg";
 import logo3 from "./verifiedlylogo.svg";
@@ -14,13 +16,17 @@ import bank from "./bank.svg";
 import crypto from "./crypto.svg";
 import stock from "./stock.svg";
 import cards from "./cards.svg";
+import lines from "./linesbg.svg";
+import comply from "./comply.svg";
 
 export {
   circle1,
   circle2,
   circle3,
+  circle4,
   iphone,
   polygon1,
+  polygon2,
   logo1,
   logo2,
   logo3,
@@ -32,4 +38,6 @@ export {
   crypto,
   stock,
   cards,
+  lines,
+  comply,
 };
