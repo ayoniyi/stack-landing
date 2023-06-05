@@ -6,8 +6,8 @@
 .heroContent {
   display: flex;
   color: #fff;
-  width: 85%;
-  max-width: 1500px;
+  width: 80%;
+  max-width: 1300px;
   margin: auto;
   padding-top: 5em;
 }
@@ -27,7 +27,7 @@
     font-size: 5.4vw;
     line-height: 90px;
     overflow: hidden;
-    width: 90%;
+    width: 95%;
     min-width: 500px;
     //background: pink;
     span {
@@ -45,11 +45,11 @@
     font-size: 1.03em;
   }
   button {
-    @include btnRegular(200px);
+    @include btnRegular(220px);
     // max-width: 200px;
     // min-width: 180px;
     // width: 13vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
   }
 }
@@ -94,11 +94,19 @@
 }
 
 @media (min-width: 1815px) {
+  .heroLeft {
+    width: 65%;
+    //background: lavender;
+  }
+  .heroRight {
+    width: 45%;
+  }
   .heroContent {
     h2 {
-      font-size: 5vw;
+      font-size: 6.5em;
       margin-bottom: 40px;
       line-height: 105px;
+      width: 100%;
     }
   }
 }
@@ -154,6 +162,9 @@
       font-size: 3em;
       //background: #353434;
       min-width: 1px;
+    }
+    button {
+      width: 55vw;
     }
   }
   .heroRight {

@@ -3,10 +3,12 @@ import style from "./Landing.module.scss";
 import { circle1, circle2, polygon1, iphone } from "./assets";
 import Header from "../../components/header/Header";
 import Cursor from "../../components/cursorFire/Cursor";
+import Intro from "../../components/intro/Intro";
 
 const Landing = () => {
   return (
     <>
+      <Intro />
       <Header />
       {/* <Cursor /> */}
       <section className={style.hero}>

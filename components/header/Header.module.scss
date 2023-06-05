@@ -11,8 +11,8 @@
 }
 .content {
   @include flexRegular(row, space-between);
-  width: 85%;
-  max-width: 1500px;
+  width: 80%;
+  max-width: 1300px;
   margin: auto;
   //background: pink;
 }
