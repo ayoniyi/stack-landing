@@ -32,8 +32,12 @@
     width: 95%;
     min-width: 500px;
     //background: pink;
-    span {
+    // span {
+
+    // }
+    .hT {
       display: inline-block;
+      transform: translateY(100%), skewY(45);
     }
     .heroImp {
       color: #007bff;
@@ -45,6 +49,11 @@
     color: rgba(255, 255, 255, 0.83);
     line-height: 26px;
     font-size: 1.03em;
+    overflow: hidden;
+    span {
+      display: inline-block;
+      transform: translateY(100%);
+    }
   }
   button {
     @include btnRegular(220px);
@@ -53,6 +62,8 @@
     // width: 13vw;
     font-weight: 500;
     font-size: 15px;
+    opacity: 0;
+    transform: translateY(100%);
   }
 }
 .heroRight {
@@ -194,7 +205,7 @@
     font-size: 2.3em;
     width: 60%;
     margin: auto;
-
+    //transform: translateY(100%);
     span {
       color: #007bff;
     }
@@ -471,6 +482,7 @@
   }
 }
 .pBBImg {
+  //padding: 0 2em 0 4em;
   img {
     transform: scale(1.06);
     width: 100%;
@@ -820,9 +832,11 @@
   cursor: pointer;
   // background: pink;
   height: 100%;
+  //transition: 0.3s ease-in-out;
 }
 .activeTab {
   border-bottom: 2.5px solid #007bff;
+  //transition: 0.3s ease-in-out;
 }
 .fitInfo {
   margin: 4em 0 2em 0;
@@ -950,6 +964,7 @@
   @include flexRegular(row, space-between);
   //background: #4b4a4a;
 }
+
 .pTBox {
   background: #000000;
   border: 1px solid #ffffff65;
@@ -979,6 +994,23 @@
     font-weight: 500;
     font-size: 15px;
     margin-top: 1.4em;
+  }
+  transition: 0.3s ease-in;
+  &:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+    button {
+      background: #000;
+      color: #fff;
+      border: 1px solid #fff;
+      transform: scale(1.05);
+    }
+    h2 {
+      span {
+        color: #000;
+      }
+    }
   }
 }
 .pricingTable {
@@ -1129,8 +1161,16 @@
   );
   @include flexRegular(column, center);
   border-radius: 14px;
+  h2 {
+    span {
+      color: #007bff;
+    }
+  }
   p {
     width: 60%;
+    span {
+      color: #007bff;
+    }
   }
 }
 .circle5 {
@@ -1146,5 +1186,8 @@
 @media (max-width: 910px) {
   .helpBox {
     width: 90%;
+    p {
+      width: 75%;
+    }
   }
 }

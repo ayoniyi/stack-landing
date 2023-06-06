@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import style from "./Landing.module.scss";
+// assets
 import {
   circle1,
   circle2,
@@ -28,35 +30,108 @@ import {
   check,
   circle5,
 } from "./assets";
+// ui components
 import Header from "../../components/header/Header";
 import Cursor from "../../components/cursorFire/Cursor";
 import Intro from "../../components/intro/Intro";
 import Footer from "../../components/footer/Footer";
+//extras
+import { gsap, Expo } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { motion } from "framer-motion";
+import Atropos from "atropos/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Landing = () => {
+  const [tab, setTab] = useState("noCode");
+  const [bankToggle, setBankToggle] = useState(false);
+  const [cryptoToggle, setCryptoToggle] = useState(false);
+  const [stockToggle, setStockToggle] = useState(false);
+  const [cardToggle, setCardToggle] = useState(false);
+  // gsap stuff
+  const heroTitle = useRef();
+  const heroTxt = useRef();
+  const heroBtn = useRef();
+  const builtTitle = useRef();
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.to(heroTitle.current, {
+      y: 0,
+      delay: 4.8,
+      skewY: 0,
+      duration: 1.8,
+      //stagger: 0.5,
+      ease: Expo.easeInOut,
+    });
+    tl.to(heroTxt.current, {
+      y: 0,
+      duration: 1.2,
+      delay: -1,
+      ease: Expo.easeInOut,
+    });
+    tl.to(heroBtn.current, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      delay: -1,
+      ease: Expo.easeInOut,
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   const tl = gsap.timeline();
+  //   // scroll trigger
+  //   tl.to(builtTitle.current, {
+  //     scrollTrigger: {
+  //       trigger: builtTitle.current,
+  //       //start: "top center+=100",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //     y: 0,
+  //     duration: 4.8,
+  //   });
+  // }, []);
+
   return (
     <>
-      <Intro />
+      {/* <Intro /> */}
       <Header />
-      {/* <Cursor /> */}
+      <Cursor />
       <section className={style.hero}>
-        <div className={style.heroContent}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+              transition: {
+                delay: 4.8,
+              },
+            },
+          }}
+          className={style.heroContent}
+        >
           <div className={style.heroLeft}>
             <div className={style.heroLeftContent}>
               <h2>
-                <span>
+                <span className={style.hT} ref={heroTitle}>
                   Build your fintech startup in{" "}
                   <span className={style.heroImp}>weeks</span>{" "}
                 </span>
               </h2>
               <p>
-                <span>
+                <span ref={heroTxt}>
                   Say goodbye to multi-year contracts, outrageous fees or months
                   of development. Integrate our API during your lunch break, go
                   live by dinner.
                 </span>
               </p>
-              <button>Request early access</button>
+              <button ref={heroBtn}>Request early access</button>
             </div>
           </div>
           <div className={style.heroRight}>
@@ -64,30 +139,62 @@ const Landing = () => {
               <Image src={circle1} alt="circle" />
             </div>
             <div className={style.heroImg}>
-              <Image src={iphone} alt="stack" />
+              <Atropos
+                activeOffset={10}
+                shadow={false}
+                highlight={false}
+                shadowScale={0}
+              >
+                <Image
+                  src={iphone}
+                  alt="stack"
+                  //data-atropos-opacity="1;0"
+                  data-atropos-offset="5"
+                />
+              </Atropos>
               <div className={style.polygon1}>
                 <Image src={polygon1} alt="polygon" />
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className={style.circle2}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              x: 100,
+            },
+            visible: {
+              x: 0,
+              transition: {
+                delay: 6.2,
+                duration: 3,
+              },
+            },
+          }}
+          className={style.circle2}
+        >
           <Image src={circle2} alt="circle" />
-        </div>
+        </motion.div>
       </section>
       <section className={style.builtSection}>
         <div className={style.builtContent}>
-          <h3>
+          <h3 ref={builtTitle} data-aos="fade-up" data-aos-duration="500">
             Built from the ground up so you <span> never </span> have to go
             through the <span>stress</span>.
           </h3>
-          <p>
+          <p data-aos="fade-up" data-aos-duration="500">
             Stack was built by ex senior software engineers from top fintechs
             around the world so that you can focus on running your business and
             not worry about building.
           </p>
-          <div className={style.builtLogos}>
+          <div
+            className={style.builtLogos}
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
             <Image src={logo1} alt="logo1" />
             <Image src={logo2} alt="logo2" />
             <Image src={logo3} alt="logo3" />
@@ -99,7 +206,11 @@ const Landing = () => {
           <Image src={circle3} alt="circle" />
         </div>
         <div className={style.helpContent}>
-          <div className={style.helpText}>
+          <div
+            className={style.helpText}
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
             <h4>
               Who We <span>Help</span>{" "}
             </h4>
@@ -110,16 +221,25 @@ const Landing = () => {
               startup off the ground in weeks!
             </p>
           </div>
-          <div className={style.boxes}>
+          <div
+            className={style.boxes}
+            data-aos="fade-down"
+            data-aos-duration="500"
+          >
             <div className={style.boxRows}>
               <div className={style.box}>
-                <Image src={look1} alt="look" />
-                <h3>Exploration</h3>
-                <p>
+                <Image
+                  src={look1}
+                  alt="look"
+                  //data-atropos-offset="30"
+                />
+                <h3 data-atropos-offset="25">Exploration</h3>
+                <p data-atropos-offset="25">
                   You just are exploring a new startup idea and trying to decide
                   what partner is best for you.
                 </p>
               </div>
+
               <div className={style.box}>
                 <Image src={look2} alt="look" />
                 <h3>New product offering</h3>
@@ -153,36 +273,80 @@ const Landing = () => {
       </section>
       <section className={style.products}>
         <div className={style.productsContent}>
-          <div className={style.productTxt}>
+          <div
+            className={style.productTxt}
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
             <h3>
               Some Of Our <span>Products</span>{" "}
             </h3>
             <h2>Build the startup your customers deserve.</h2>
           </div>
-          <div className={style.productBoxes}>
+          <div
+            className={style.productBoxes}
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
+            {/* <Atropos
+              activeOffset={20}
+              shadow={false}
+              highlight={false}
+              //rotate={false}
+              rotateXMax={5}
+              rotateYMax={5}
+              stretchZ={50}
+              shadowScale={0}
+              className={style.item}
+            > */}
             <div className={style.productBoxBig}>
-              <div className={style.pBBTxt}>
+              <div
+                className={style.pBBTxt}
+                onMouseOver={() => setBankToggle(!bankToggle)}
+              >
                 <h3>Build banking apps</h3>
                 <p>Straight from the federal reserve to your application.</p>
                 <button>Learn more</button>
               </div>
               <div className={style.pBBImg}>
+                {" "}
                 <Image src={bank} alt="banking" />
               </div>
             </div>
+            {/* </Atropos> */}
             <div className={style.productBoxRow}>
               <div className={style.productBoxSmall}>
-                <div className={style.pBSTxt}>
+                {/* {!cryptoToggle ? ( */}
+                <div
+                  className={`${style.pBSTxt} animate__animated animate__fadeIn`}
+                  onMouseOver={() => setCryptoToggle(!cryptoToggle)}
+                >
                   <h3>Build crypto apps</h3>
                   <p>Straight from the blockchain to your application</p>
                   <button>Learn more</button>
                 </div>
+                {/* ) : (
+                  <div
+                    className={`${style.pBSTxt} animate__animated animate__fadeIn`}
+                    onMouseOver={() => setCryptoToggle(!cryptoToggle)}
+                  >
+                    <h3>Create your own digital neo-banking solution</h3>
+                    <p>
+                      Programmatically set up new accounts or manage existing
+                      accounts.
+                    </p>
+                    <button>Learn more</button>
+                  </div>
+                )} */}
                 <div className={style.pBSImg}>
                   <Image src={crypto} alt="blockchain" />
                 </div>
               </div>
               <div className={style.productBoxSmall}>
-                <div className={style.pBSTxt}>
+                <div
+                  className={style.pBSTxt}
+                  onMouseOver={() => setStockToggle(!stockToggle)}
+                >
                   <h3>Build stock trading apps</h3>
                   <p>Straight from the stock market, to your application</p>
                   <button>Learn more</button>
@@ -193,7 +357,10 @@ const Landing = () => {
               </div>
             </div>
             <div className={style.productBoxBig}>
-              <div className={style.pBBTxt}>
+              <div
+                className={style.pBBTxt}
+                onMouseOver={() => setCardToggle(!cardToggle)}
+              >
                 <h3>Embed card issuing</h3>
                 <p>Issue virtual and physical cards to your users.</p>
                 <button>Learn more</button>
@@ -206,11 +373,48 @@ const Landing = () => {
         </div>
       </section>
       <section className={style.compliance}>
-        <div className={style.polygon2}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              y: 0,
+              opacity: 0,
+            },
+            visible: {
+              y: [0, -50, 0, -50, 0, -50, 0],
+              rotate: [90, 0, 90, 0, 90],
+              opacity: 1,
+              transition: {
+                type: "spring",
+                opacity: {
+                  duration: 4,
+                },
+                y: {
+                  ease: "linear",
+                  repeat: Infinity,
+                  duration: 30,
+                  delay: 2.5,
+                },
+                rotate: {
+                  ease: "linear",
+                  repeat: Infinity,
+                  duration: 20,
+                  delay: 2.5,
+                },
+              },
+            },
+          }}
+          className={style.polygon2}
+        >
           <Image src={polygon2} alt="polygon" />
-        </div>
+        </motion.div>
         <div className={style.complianceContent}>
-          <div className={style.complianceTxt}>
+          <div
+            className={style.complianceTxt}
+            data-aos="fade-up"
+            data-aos-duration="500"
+          >
             <h3>
               Built In <span>Compliance</span>{" "}
             </h3>
@@ -230,7 +434,11 @@ const Landing = () => {
               available options, minus the discrimination.
             </p>
           </div>
-          <div className={style.complianceImg}>
+          <div
+            className={style.complianceImg}
+            data-aos="fade-down"
+            data-aos-duration="500"
+          >
             <Image src={lines} alt="shape" />
             <div className={style.complyImg}>
               <Image src={comply} alt="compliance" />
@@ -238,7 +446,11 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className={style.offering}>
+      <section
+        className={style.offering}
+        data-aos="fade-up"
+        data-aos-duration="500"
+      >
         <div className={style.circle4}>
           <Image src={circle4} alt="circle" />
         </div>
@@ -309,7 +521,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className={style.fit}>
+      <section className={style.fit} data-aos="fade-up" data-aos-duration="500">
         <div className={style.fitContent}>
           <div className={style.fitTop}>
             <h2>
@@ -323,55 +535,90 @@ const Landing = () => {
               solutions, not one-size-fits-all.
             </p>
             <div className={style.fitTabs}>
-              <div className={`${style.fitTabItem} ${style.activeTab}`}>
+              <div
+                className={`${style.fitTabItem} ${
+                  tab === "noCode" ? style.activeTab : ""
+                }`}
+                onClick={() => setTab("noCode")}
+              >
                 No-Code
               </div>
-              <div className={style.fitTabItem}>Low-Code</div>
-              <div className={style.fitTabItem}>All-Code</div>
+              <div
+                className={`${style.fitTabItem} ${
+                  tab === "lowCode" ? style.activeTab : ""
+                }`}
+                onClick={() => setTab("lowCode")}
+              >
+                Low-Code
+              </div>
+              <div
+                className={`${style.fitTabItem} ${
+                  tab === "allCode" ? style.activeTab : ""
+                }`}
+                onClick={() => setTab("allCode")}
+              >
+                All-Code
+              </div>
             </div>
           </div>
-          <div className={style.fitInfo}>
-            <div className={style.fitInfoTxt}>
-              <h2>NO-CODE</h2>
-              <p>
-                Speed up your time to market with our pre-built solutions - no
-                coding required!
-              </p>
+          {tab === "noCode" && (
+            <div
+              className={`${style.fitInfo} animate__animated animate__fadeIn`}
+            >
+              <div className={style.fitInfoTxt}>
+                <h2>NO-CODE</h2>
+                <p>
+                  Speed up your time to market with our pre-built solutions - no
+                  coding required!
+                </p>
+              </div>
+              <div className={style.fitInfoImg}>
+                <Image src={noCode} alt="no-code options" />
+              </div>
             </div>
-            <div className={style.fitInfoImg}>
-              <Image src={noCode} alt="no-code options" />
+          )}
+          {tab === "lowCode" && (
+            <div
+              className={`${style.fitInfo} animate__animated animate__fadeIn`}
+            >
+              <div className={style.fitInfoTxt}>
+                <h2>LOW-CODE</h2>
+                <p>
+                  Mix our UI components with yours. Write some code where
+                  necessary and use our drop-in components for the rest.
+                </p>
+              </div>
+              <div className={style.fitInfoImg}>
+                <Image src={lowCode} alt="low-code options" />
+              </div>
             </div>
-          </div>
-          {/* <div className={style.fitInfo}>
-            <div className={style.fitInfoTxt}>
-              <h2>LOW-CODE</h2>
-              <p>
-                Mix our UI components with yours. Write some code where
-                necessary and use our drop-in components for the rest.
-              </p>
+          )}
+          {tab === "allCode" && (
+            <div
+              className={`${style.fitInfo} animate__animated animate__fadeIn`}
+            >
+              <div className={style.fitInfoTxt}>
+                <h2>ALL-CODE</h2>
+                <p>
+                  Build a fully custom solution by integrating our API directly
+                  into your product.
+                </p>
+              </div>
+              <div className={style.fitInfoImg}>
+                <Image src={allCode} alt="all-code options" />
+              </div>
             </div>
-            <div className={style.fitInfoImg}>
-              <Image src={lowCode} alt="low-code options" />
-            </div>
-          </div> */}
-          {/* <div className={style.fitInfo}>
-            <div className={style.fitInfoTxt}>
-              <h2>ALL-CODE</h2>
-              <p>
-                Build a fully custom solution by integrating our API directly
-                into your product.
-              </p>
-            </div>
-            <div className={style.fitInfoImg}>
-              <Image src={allCode} alt="all-code options" />
-            </div>
-          </div> */}
+          )}
         </div>
         <div className={style.polygon4}>
           <Image src={polygon3} alt="polygon" />
         </div>
       </section>
-      <section className={style.pricing}>
+      <section
+        className={style.pricing}
+        data-aos="fade-up"
+        data-aos-duration="500"
+      >
         <div className={style.pricingContent}>
           <div className={style.pricingTop}>
             <div className={style.pTopTxt}>
@@ -381,6 +628,8 @@ const Landing = () => {
               <h2>Simple pricing for everyone.</h2>
             </div>
             <div className={style.pTopBoxes}>
+              {/* <div className={style.pTopBxC}> */}
+              <div className={style.pTopBoxLayer}></div>
               <div className={style.pTBox}>
                 <h3>Sandbox</h3>
                 <p>Starts at</p>
@@ -390,6 +639,9 @@ const Landing = () => {
                 <p>Per Month</p>
                 <button>Get Started</button>
               </div>
+              {/* </div> */}
+              {/* <div className={style.pTopBxC}> */}
+              <div className={style.pTopBoxLayer}></div>
               <div className={style.pTBox}>
                 <h3>MVP</h3>
                 <p>Starts at</p>
@@ -399,6 +651,9 @@ const Landing = () => {
                 <p>Per Month</p>
                 <button>Get Started</button>
               </div>
+              {/* </div> */}
+              {/* <div className={style.pTopBxC}> */}
+              <div className={style.pTopBoxLayer}></div>
               <div className={style.pTBox}>
                 <h3>Growth</h3>
                 <p>Starts at</p>
@@ -408,6 +663,7 @@ const Landing = () => {
                 <p>Per Month</p>
                 <button>Get Started</button>
               </div>
+              {/* </div> */}
             </div>
           </div>
           <div className={style.pricingTable}>
@@ -572,22 +828,35 @@ const Landing = () => {
         </div>
       </section>
       <section className={style.help}>
-        <div className={style.helpBox}>
-          <div className={style.circle5}>
-            <Image src={circle5} alt="circle" />
+        <Atropos
+          activeOffset={10}
+          shadow={false}
+          highlight={false}
+          //rotate={false}
+          rotateXMax={10}
+          rotateYMax={10}
+          //stretchZ={50}
+          shadowScale={0}
+        >
+          <div className={style.helpBox}>
+            <div className={style.circle5}>
+              <Image src={circle5} alt="circle" />
+            </div>
+            <h2 data-atropos-offset="15">
+              Need Some <span>Help?</span>
+            </h2>
+            <p data-atropos-offset="15">
+              Whether you&apos;re stuck or just want some tips on where to
+              start, we are just an email away.
+            </p>
+            <p data-atropos-offset="15">
+              <span>support@stack-ft.com.</span>{" "}
+            </p>
+            <div className={style.polygon5}>
+              <Image src={polygon3} alt="polygon" />
+            </div>
           </div>
-          <h2>
-            Need Some <span>Help?</span>
-          </h2>
-          <p>
-            Whether you&apos;re stuck or just want some tips on where to start,
-            we are just an email away.
-          </p>
-          <p>support@stack-ft.com.</p>
-          <div className={style.polygon5}>
-            <Image src={polygon3} alt="polygon" />
-          </div>
-        </div>
+        </Atropos>
       </section>
       <Footer />
     </>
