@@ -21,6 +21,11 @@ import {
   lines,
   comply,
   circle4,
+  noCode,
+  polygon3,
+  allCode,
+  lowCode,
+  check,
 } from "./assets";
 import Header from "../../components/header/Header";
 import Cursor from "../../components/cursorFire/Cursor";
@@ -297,6 +302,268 @@ const Landing = () => {
                   Verify the identity of businesses and individuals faster than
                   you can read this sentence.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={style.fit}>
+        <div className={style.fitContent}>
+          <div className={style.fitTop}>
+            <h2>
+              {" "}
+              One size <span>DOES NOT</span> fit all
+            </h2>
+            <p>
+              At Stack, we understand that every business is unique with
+              different timelines and requirements. That's why we offer a
+              solution that works for everyone - because we believe in tailored
+              solutions, not one-size-fits-all.
+            </p>
+            <div className={style.fitTabs}>
+              <div className={`${style.fitTabItem} ${style.activeTab}`}>
+                No-Code
+              </div>
+              <div className={style.fitTabItem}>Low-Code</div>
+              <div className={style.fitTabItem}>All-Code</div>
+            </div>
+          </div>
+          <div className={style.fitInfo}>
+            <div className={style.fitInfoTxt}>
+              <h2>NO-CODE</h2>
+              <p>
+                Speed up your time to market with our pre-built solutions - no
+                coding required!
+              </p>
+            </div>
+            <div className={style.fitInfoImg}>
+              <Image src={noCode} alt="no-code options" />
+            </div>
+          </div>
+          {/* <div className={style.fitInfo}>
+            <div className={style.fitInfoTxt}>
+              <h2>LOW-CODE</h2>
+              <p>
+                Mix our UI components with yours. Write some code where
+                necessary and use our drop-in components for the rest.
+              </p>
+            </div>
+            <div className={style.fitInfoImg}>
+              <Image src={lowCode} alt="low-code options" />
+            </div>
+          </div> */}
+          {/* <div className={style.fitInfo}>
+            <div className={style.fitInfoTxt}>
+              <h2>ALL-CODE</h2>
+              <p>
+                Build a fully custom solution by integrating our API directly
+                into your product.
+              </p>
+            </div>
+            <div className={style.fitInfoImg}>
+              <Image src={allCode} alt="all-code options" />
+            </div>
+          </div> */}
+        </div>
+        <div className={style.polygon4}>
+          <Image src={polygon3} alt="polygon" />
+        </div>
+      </section>
+      <section className={style.pricing}>
+        <div className={style.pricingContent}>
+          <div className={style.pricingTop}>
+            <div className={style.pTopTxt}>
+              <h3>
+                Pricing<span> Plan</span>
+              </h3>
+              <h2>Simple pricing for everyone.</h2>
+            </div>
+            <div className={style.pTopBoxes}>
+              <div className={style.pTBox}>
+                <h3>Sandbox</h3>
+                <p>Starts at</p>
+                <h2>
+                  0 <span>$</span>{" "}
+                </h2>
+                <p>Per Month</p>
+                <button>Get Started</button>
+              </div>
+              <div className={style.pTBox}>
+                <h3>MVP</h3>
+                <p>Starts at</p>
+                <h2>
+                  99 <span>$</span>{" "}
+                </h2>
+                <p>Per Month</p>
+                <button>Get Started</button>
+              </div>
+              <div className={style.pTBox}>
+                <h3>Growth</h3>
+                <p>Starts at</p>
+                <h2>
+                  99 <span>$</span>{" "}
+                </h2>
+                <p>Per Month</p>
+                <button>Get Started</button>
+              </div>
+            </div>
+          </div>
+          <div className={style.pricingTable}>
+            <div className={style.pTableTitle}>
+              <p>Products and services</p>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Identity and fraud protection</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Secure File dropbox</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image className={style.hide} src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Secure Email service</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image className={style.hide} src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Stocks</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Crypto</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Bill Pay</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Banking</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Card Issuing</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>API access</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Development support</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image className={style.hide} src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+              </div>
+            </div>
+            <div className={style.pTableRow}>
+              <div className={style.pTableItem}>
+                {" "}
+                <p>Check mailing</p>
+              </div>
+
+              <div className={style.pTableCheck}>
+                <Image className={style.hide} src={check} alt="check" />
+
+                <Image src={check} alt="check" />
+
+                <Image src={check} alt="check" />
               </div>
             </div>
           </div>
