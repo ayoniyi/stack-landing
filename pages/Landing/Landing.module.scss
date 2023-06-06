@@ -1038,7 +1038,102 @@
   visibility: hidden;
 }
 @media (max-width: 910px) {
+  .pTopTxt {
+    width: 30%;
+    h3 {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 1.7em;
+    }
+  }
+  .pTopBoxes {
+    width: 70%;
+  }
   .pricingContent {
     width: 95%;
+  }
+  .pTBox {
+    button {
+      @include btnRegular(11vw);
+      height: 42px;
+      font-size: 13px;
+      min-width: 80px;
+    }
+  }
+  .pTableItem {
+    width: 30%;
+  }
+  .pTableCheck {
+    width: 65%;
+  }
+}
+@media (max-width: 680px) {
+  .pricingTop {
+    @include flexRegular(column, space-between);
+  }
+  .pTopTxt {
+    width: 100%;
+  }
+  .pTopBoxes {
+    //margin-left: 30%;
+    width: 100%;
+  }
+  .pTableRow {
+    @include flexRegular(column, space-between);
+  }
+  .pTableItem {
+    text-align: center;
+  }
+  .pTableItem,
+  .pTableCheck {
+    width: 100%;
+  }
+  .pTableCheck {
+    padding: 2em 0 1em 2em;
+    align-items: center;
+  }
+}
+@media (max-width: 460px) {
+  .pTBox {
+    width: 33%;
+    //background: pink;
+    padding: 0;
+    button {
+      display: block;
+      @include btnRegular(100%);
+
+      max-width: 220px;
+      min-width: 20px;
+      // background: lavenderblush;
+    }
+  }
+}
+
+// ----- Help Section ---- //
+.help {
+  padding: 8em 0;
+}
+.helpBox {
+  text-align: center;
+  padding: 2em 0;
+  color: #fff;
+  width: 70%;
+  max-width: 1300px;
+  margin: auto;
+  background: linear-gradient(
+    -135.76deg,
+    #232222 32.87%,
+    rgba(35, 34, 34, 0.27) 75.33%
+  );
+  @include flexRegular(column, center);
+  border-radius: 14px;
+  p {
+    width: 70%;
+  }
+}
+@media (max-width: 910px) {
+  .helpBox {
+    width: 90%;
   }
 }

@@ -36,7 +36,7 @@ const Landing = () => {
     <>
       <Intro />
       <Header />
-      {/* <Cursor /> */}
+      <Cursor />
       <section className={style.hero}>
         <div className={style.heroContent}>
           <div className={style.heroLeft}>
@@ -567,6 +567,18 @@ const Landing = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className={style.help}>
+        <div className={style.helpBox}>
+          <h2>
+            Need Some <span>Help?</span>
+          </h2>
+          <p>
+            Whether you&apos;re stuck or just want some tips on where to start,
+            we are just an email away.
+          </p>
+          <p>support@stack-ft.com.</p>
         </div>
       </section>
     </>
