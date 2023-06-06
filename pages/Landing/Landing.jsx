@@ -59,7 +59,7 @@ const Landing = () => {
     const tl = gsap.timeline();
     tl.to(heroTitle.current, {
       y: 0,
-      delay: 4.8,
+      delay: 4.7,
       skewY: 0,
       duration: 1.8,
       //stagger: 0.5,
