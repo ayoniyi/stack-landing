@@ -12,6 +12,7 @@
 @mixin btnRegular($width) {
   transition: 0.2s ease-in;
   background: #ffffff;
+  color: #000;
   border-radius: 12px 0px;
   box-sizing: border-box;
   width: $width;

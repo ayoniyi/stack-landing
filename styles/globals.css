@@ -37,9 +37,16 @@ html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+@media (max-width: 950px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
 
 body {
   width: 100%;
+  position: relative;
   /* overflow-x: hidden; */
   /* background: #fff; */
   background: #000;
@@ -48,6 +55,7 @@ body {
 
 button {
   cursor: pointer;
+
   font-family: Raleway, sans-serif;
 }
 button:disabled {
