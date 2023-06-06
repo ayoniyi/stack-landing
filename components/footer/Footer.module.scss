@@ -1,0 +1,107 @@
+@import "../../styles/mixin";
+
+.container {
+  background: #1f1e1e;
+  //   background: #fff;
+  //   background: #007bff;
+  padding: 4em 3em;
+}
+.content {
+  color: #fff;
+  width: 80%;
+  max-width: 1300px;
+  margin: auto;
+}
+.contentMain {
+  @include flexRegular(row, space-between);
+  align-items: flex-start;
+}
+.left {
+  //background: #000;
+  width: 50%;
+  p {
+    color: #ffffffc1;
+    width: 55%;
+    line-height: 25px;
+  }
+}
+.right {
+  //background: #000;
+  //padding-right: 2em;
+  width: 35%;
+  @include flexRegular(row, space-between);
+  align-items: flex-start;
+}
+.links {
+  @include flexRegular(column, flex-start);
+  align-items: flex-start;
+  //margin-right: 2em;
+  h2 {
+    font-size: AeonikBold;
+  }
+  p {
+    color: #ffffffc1;
+    font-size: 13px;
+    margin: 0.7em 0;
+  }
+}
+.contentOther {
+  margin-top: 3.5em;
+  padding-top: 1em;
+  @include flexRegular(row, space-between);
+  border-top: 1px solid #ffffff49;
+  p {
+    font-size: 14px;
+    color: #ffffffc1;
+  }
+}
+@media (max-width: 910px) {
+  .container {
+    padding: 4em 0;
+  }
+  .content {
+    width: 95%;
+  }
+  .left {
+    width: 45%;
+    p {
+      width: 70%;
+    }
+  }
+  .right {
+    width: 55%;
+  }
+}
+@media (max-width: 550px) {
+  .contentMain {
+    @include flexRegular(column, space-between);
+  }
+  .left {
+    p {
+      width: 90%;
+    }
+  }
+  .left,
+  .right {
+    width: 95%;
+  }
+  .right {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 414px) {
+  // not really needed?
+  .left {
+    p {
+      width: 100%;
+    }
+  }
+  .right {
+    @include flexRegular(column, space-between);
+  }
+  .links {
+    //background: #000;
+    width: 100%;
+  }
+}

@@ -26,7 +26,7 @@
     font-family: AeonikBold;
     font-weight: bold;
     //font-family: 4em;
-    font-size: 5.4vw;
+    font-size: 5vw;
     line-height: 90px;
     overflow: hidden;
     width: 95%;
@@ -105,7 +105,7 @@
   }
   .heroContent {
     h2 {
-      font-size: 6.5em;
+      font-size: 6.1em;
       margin-bottom: 40px;
       line-height: 105px;
       width: 100%;
@@ -1116,7 +1116,8 @@
 }
 .helpBox {
   text-align: center;
-  padding: 2em 0;
+  position: relative;
+  padding: 3.5em 0;
   color: #fff;
   width: 70%;
   max-width: 1300px;
@@ -1129,8 +1130,18 @@
   @include flexRegular(column, center);
   border-radius: 14px;
   p {
-    width: 70%;
+    width: 60%;
   }
+}
+.circle5 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.polygon5 {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 }
 @media (max-width: 910px) {
   .helpBox {

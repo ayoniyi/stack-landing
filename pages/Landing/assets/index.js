@@ -2,6 +2,7 @@ import circle1 from "./ellipse1.svg";
 import circle2 from "./ellipse2.svg";
 import circle3 from "./ellipse3.svg";
 import circle4 from "./circle4.svg";
+import circle5 from "./circle5.svg";
 import iphone from "./iphone11.png";
 import polygon1 from "./polygon1.svg";
 import polygon2 from "./polygon3.svg";
@@ -50,4 +51,5 @@ export {
   lowCode,
   allCode,
   check,
+  circle5,
 };

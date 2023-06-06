@@ -26,17 +26,19 @@ import {
   allCode,
   lowCode,
   check,
+  circle5,
 } from "./assets";
 import Header from "../../components/header/Header";
 import Cursor from "../../components/cursorFire/Cursor";
 import Intro from "../../components/intro/Intro";
+import Footer from "../../components/footer/Footer";
 
 const Landing = () => {
   return (
     <>
       <Intro />
       <Header />
-      <Cursor />
+      {/* <Cursor /> */}
       <section className={style.hero}>
         <div className={style.heroContent}>
           <div className={style.heroLeft}>
@@ -571,6 +573,9 @@ const Landing = () => {
       </section>
       <section className={style.help}>
         <div className={style.helpBox}>
+          <div className={style.circle5}>
+            <Image src={circle5} alt="circle" />
+          </div>
           <h2>
             Need Some <span>Help?</span>
           </h2>
@@ -579,8 +584,12 @@ const Landing = () => {
             we are just an email away.
           </p>
           <p>support@stack-ft.com.</p>
+          <div className={style.polygon5}>
+            <Image src={polygon3} alt="polygon" />
+          </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
