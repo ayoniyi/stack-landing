@@ -96,7 +96,7 @@ const Landing = () => {
 
   return (
     <>
-      {/* <Intro /> */}
+      <Intro />
       <Header />
       <Cursor />
       <section className={style.hero}>
