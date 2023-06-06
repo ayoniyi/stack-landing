@@ -29,7 +29,7 @@ import {
   lowCode,
   check,
   circle5,
-} from "./assets";
+} from "../../assets";
 // ui components
 import Header from "../../components/header/Header";
 import Cursor from "../../components/cursorFire/Cursor";
